@@ -41,9 +41,9 @@ public:
 
      precondition: s is a valid Song
 
-     input parms -
+     input parms - pointer to a song
 
-     output parms -
+     output parms - integer that conveys success of the song
     */
 
     int addSong(Song const &s);

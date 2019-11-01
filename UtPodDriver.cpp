@@ -20,8 +20,10 @@ int main(int argc, char *argv[])
 {
     UtPod t;
 
+    t.showSongList();
+
     Song s1("Beatles", "Hey Jude1", 4);
-    int result = t.addSong(s1);
+    int result = t.addSong(s1); // this doesn't work rn
     cout << "result = " << result << endl;
 
     t.showSongList();
@@ -43,6 +45,14 @@ int main(int argc, char *argv[])
     Song s5("Beatles", "Hey Jude5", 241);
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
+
+    t.showSongList();
+
+    t.shuffle();
+
+    t.showSongList();
+
+    t.shuffle();
 
     t.showSongList();
 
