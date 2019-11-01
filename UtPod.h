@@ -56,9 +56,9 @@ public:
          o returns -1 if nothing is removed
 
 
-       input parms -
+       input parms - pointer to a song
 
-       output parms -
+       output parms - integer that conveys success of the song
     */
 
     int removeSong(Song const &s);
@@ -68,9 +68,9 @@ public:
      *  shuffles the songs into random order
         o will do nothing if there are less than two songs in the current list
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - none
     */
 
     void shuffle();
@@ -80,9 +80,9 @@ public:
      * prints the current list of songs in order from first to last to standard output
      * format - Title, Artist, size in MB (one song per line)
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - none
     */
 
     void showSongList();
@@ -92,9 +92,9 @@ public:
      *  sorts the songs in ascending order
         o will do nothing if there are less than two songs in the current list
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - none
     */
 
     void sortSongList();
@@ -103,9 +103,9 @@ public:
     /* FUNCTION - void clearMemory
      * clears all the songs from memory
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - none
     */
     void clearMemory();
 
@@ -114,9 +114,9 @@ public:
      *  returns the total amount of memory in the UtPod
         o will do nothing if there are less than two songs in the current list
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - integer for total memory
     */
 
     int getTotalMemory() {
@@ -128,14 +128,14 @@ public:
     /* FUNCTION - int getRemainingMemory
      *  returns the amount of memory available for adding new songs
 
-       input parms -
+       input parms - none
 
-       output parms -
+       output parms - integer for total remaining memory
     */
 
     int getRemainingMemory();
 
-
+    //destructor for UtPod; removes all songs
     ~UtPod();
 
 };
