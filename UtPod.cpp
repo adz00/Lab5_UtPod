@@ -44,6 +44,7 @@ int UtPod::addSong(Song const &s) {
     }
 }
 int UtPod::removeSong(Song const &s) {
+
     SongNode *prevPtr = songs;
 
     if(songs == NULL)
@@ -101,17 +102,22 @@ void UtPod::clearMemory() {
     }
 }
 void UtPod::showSongList() {
-    if (songs==NULL) {
-        cout << "There are no songs on the UtPod right now" << endl;
-    }
+
     SongNode *ptr = songs;
 
-    while(ptr != NULL)
+    if(songs == NULL)
     {
-        cout << (ptr->s).getTitle() << ", " << (ptr->s).getArtist() << ", " << (ptr->s).getSize() << endl;
-        ptr = ptr->next;
+        cout << "There are no songs on the UtPod currently" << endl << endl;
     }
-    cout << endl;
+    else
+    {
+        while(ptr != NULL)
+        {
+            cout << (ptr->s).getTitle() << ", " << (ptr->s).getArtist() << ", " << (ptr->s).getSize() << endl;
+            ptr = ptr->next;
+        }
+    }
+
 }
 void UtPod::sortSongList()
 {
@@ -130,14 +136,15 @@ void UtPod::shuffle()
 {
     int count = 0;
     SongNode *ptr = songs;
-    while(ptr != NULL) // count the number of songs in the UtPod
+    while(ptr != NULL) // count the number of sngs in the UtPod
     {
         count++;
         ptr = ptr->next;
     }
+
     for(int i = 0; i < count * 10; i++)
     {
-        int random1 = rand() % count; // generates 2 numbers between 0 and the number of songs, inclusive
+        int random1 = rand() % count; // generates 2 numbers between 1 and the number of songs, inclusive
         int random2 = rand() % count;
 
         ptr = songs;
@@ -158,7 +165,10 @@ void UtPod::shuffle()
         // now ptr and ptr2 should be pointers to two random nodes that should be swapped
 
         (ptr->s).swap(ptr2->s); // swap the two songNodes
+
     }
+
+
 }
 UtPod::~UtPod()
 {
